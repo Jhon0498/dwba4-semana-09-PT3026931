@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outra Página</title>
+  <style>
+    .formulario-fieldset {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .formulario-fieldset legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .formulario-select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .formulario-select option[value="selecione"] {
+      font-style: italic;
+      color: #888;
+    }
+
+    .formulario-input {
+      width: calc(100% - 20px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .formulario-submit {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #008029;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .formulario-submit:hover {
+      background-color: #005a1f;
+    }
+  </style>
+</head>
+
+<body>
+  <body style="background-color:white;">
+  <div class="navbar">
+    <a href="index.html" target="_top">HOME</a>
+    <a href="evento.html" target="_top">EVENTOS</a>           
+    <a href="contato.html" target="_top">CONTATO</a>
+    <div class="dropdown">
+      <button class="dropbtn">CURSOS 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="analise.html" target="_top">Análise e desenvolvimento de sistemas</a>
+        <a href="engenharia.html" target="_top">Engenharia de produção</a>
+        <a href="gestao.html" target="_top">Gestão em tecnologia de informação</a>
+        <a href="letras.html" target="_top">Letras</a>
+        <a href="gestaopublica.html" target="_top">Gestão Pública</a>
+      </div>
+<header id="header">
+
+  <nav>
+    <object width="100%" height="65px" data="header.html"></object>
+  </nav>
+  <div style="background-color: #008029; padding: 20px; text-align: left;">
+    <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/Logo.jpg?raw=true" alt="Logo IFSP Pirituba" style="max-width: 100%; height: auto;">
+  </div>
+</header>
+
+<h1> Inscreva-se</h1>
+
+<form id="meuFormulario" onsubmit="return confirmacaoSneha()">
+  <fieldset class="formulario-fieldset">
+    <legend><b>Evento:</b></legend>
+    <select class="formulario-select" name="evento">
+      <option value="selecione">-- Selecione --</option>
+      <option value="Voar sem asas">Voar sem asas</option>
+      <option value="Festa junina">Festa junina</option>
+      <option value="Semana de tecnologia">Semana de tecnologia</option>
+    </select>
+  </fieldset>
+
+  <fieldset class="formulario-fieldset">
+    <legend><b>Informações de Acesso:</b></legend>
+    <input class="formulario-input" name="usuario" placeholder="Usuário">
+    <input class="formulario-input" name="senha" type="password" placeholder="Senha">
+    <input class="formulario-input" name="confirmarSenha" type="password" placeholder="Confirme a senha">
+  </fieldset>
+
+  <fieldset class="formulario-fieldset">
+    <legend><b>Informações Pessoais:</b></legend>
+    <input class="formulario-input" name="nomeCompleto" placeholder="Nome Completo" required>
+    <input class="formulario-input" name="email" type="email" placeholder="E-mail" required>
+    <input class="formulario-input" name="celular" type="tel" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(99) 99999-9999" required>
+
+    <fieldset>
+      <legend><b>Sexo</b></legend>
+      <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
+      <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
+    </fieldset>
+
+    <input class="formulario-input" name="dataNascimento" type="date" required>
+    <input class="formulario-input" name="corFavorita" type="color">
+    <input class="formulario-input" name="perfilGithub" type="url" placeholder="Perfil GitHub">
+  </fieldset>
+
+  <input class="formulario-submit" type="submit" value="Enviar">
+  <input class="formulario-submit" type="button" value="Limpar" onclick="limparFormulario()">
+</form>
+
+<script>
+  function confirmacaoSneha() {
+    var confirmacao = confirm("Você confirma Senha?");
+    if (confirmacao) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function limparFormulario() {
+    document.getElementById("meuFormulario").reset();
+  }
+</script>
+
+<footer>
+  <a href="https://www.facebook.com/ifsppirituba"><img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/facebook.png?raw=true" alt="Ícone do Facebook" width="40" height="40"></a>
+  <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+</footer>
+
+</body>
+</html>
